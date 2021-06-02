@@ -1,0 +1,10 @@
+C:\Users\XNOTE\Desktop\Day11_clinet\PCT_UIClient_1\bin\Debug\PCT_UIClient_1.exe.config
+C:\Users\XNOTE\Desktop\Day11_clinet\PCT_UIClient_1\bin\Debug\PCT_UIClient_1.exe
+C:\Users\XNOTE\Desktop\Day11_clinet\PCT_UIClient_1\bin\Debug\PCT_UIClient_1.pdb
+C:\Users\XNOTE\Desktop\Day11_clinet\PCT_UIClient_1\obj\Debug\realtcpclient.csprojAssemblyReference.cache
+C:\Users\XNOTE\Desktop\Day11_clinet\PCT_UIClient_1\obj\Debug\PCT_UIClient_1.Form1.resources
+C:\Users\XNOTE\Desktop\Day11_clinet\PCT_UIClient_1\obj\Debug\PCT_UIClient_1.Properties.Resources.resources
+C:\Users\XNOTE\Desktop\Day11_clinet\PCT_UIClient_1\obj\Debug\realtcpclient.csproj.GenerateResource.cache
+C:\Users\XNOTE\Desktop\Day11_clinet\PCT_UIClient_1\obj\Debug\realtcpclient.csproj.CoreCompileInputs.cache
+C:\Users\XNOTE\Desktop\Day11_clinet\PCT_UIClient_1\obj\Debug\PCT_UIClient_1.exe
+C:\Users\XNOTE\Desktop\Day11_clinet\PCT_UIClient_1\obj\Debug\PCT_UIClient_1.pdb

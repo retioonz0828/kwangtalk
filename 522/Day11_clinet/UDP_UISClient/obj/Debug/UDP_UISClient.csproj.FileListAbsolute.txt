@@ -1,0 +1,10 @@
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_UISClient\bin\Debug\UDP_UISClient.exe.config
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_UISClient\bin\Debug\UDP_UISClient.exe
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_UISClient\bin\Debug\UDP_UISClient.pdb
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_UISClient\obj\Debug\UDP_UISClient.csprojAssemblyReference.cache
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_UISClient\obj\Debug\UDP_UISClient.Form1.resources
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_UISClient\obj\Debug\UDP_UISClient.Properties.Resources.resources
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_UISClient\obj\Debug\UDP_UISClient.csproj.GenerateResource.cache
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_UISClient\obj\Debug\UDP_UISClient.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_UISClient\obj\Debug\UDP_UISClient.exe
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_UISClient\obj\Debug\UDP_UISClient.pdb

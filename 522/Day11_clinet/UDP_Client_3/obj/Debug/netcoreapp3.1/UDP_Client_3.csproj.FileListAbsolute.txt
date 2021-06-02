@@ -1,0 +1,13 @@
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\bin\Debug\netcoreapp3.1\UDP_Client_3.exe
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\bin\Debug\netcoreapp3.1\UDP_Client_3.deps.json
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\bin\Debug\netcoreapp3.1\UDP_Client_3.runtimeconfig.json
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\bin\Debug\netcoreapp3.1\UDP_Client_3.runtimeconfig.dev.json
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\bin\Debug\netcoreapp3.1\UDP_Client_3.dll
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\bin\Debug\netcoreapp3.1\UDP_Client_3.pdb
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\obj\Debug\netcoreapp3.1\UDP_Client_3.csprojAssemblyReference.cache
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\obj\Debug\netcoreapp3.1\UDP_Client_3.AssemblyInfoInputs.cache
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\obj\Debug\netcoreapp3.1\UDP_Client_3.AssemblyInfo.cs
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\obj\Debug\netcoreapp3.1\UDP_Client_3.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\obj\Debug\netcoreapp3.1\UDP_Client_3.dll
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\obj\Debug\netcoreapp3.1\UDP_Client_3.pdb
+C:\Users\User\Documents\cs-workspace-2021\Day11_clinet\UDP_Client_3\obj\Debug\netcoreapp3.1\UDP_Client_3.genruntimeconfig.cache

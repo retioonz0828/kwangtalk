@@ -1,0 +1,72 @@
+C:\Users\김성준\source\repos\project0527\project0527\bin\Debug\project0527.exe.config
+C:\Users\김성준\source\repos\project0527\project0527\bin\Debug\project0527.exe
+C:\Users\김성준\source\repos\project0527\project0527\bin\Debug\project0527.pdb
+C:\Users\김성준\source\repos\project0527\project0527\obj\Debug\project0527.csprojAssemblyReference.cache
+C:\Users\김성준\source\repos\project0527\project0527\obj\Debug\project0527.Form1.resources
+C:\Users\김성준\source\repos\project0527\project0527\obj\Debug\project0527.Form2.resources
+C:\Users\김성준\source\repos\project0527\project0527\obj\Debug\project0527.Properties.Resources.resources
+C:\Users\김성준\source\repos\project0527\project0527\obj\Debug\project0527.csproj.GenerateResource.cache
+C:\Users\김성준\source\repos\project0527\project0527\obj\Debug\project0527.csproj.CoreCompileInputs.cache
+C:\Users\김성준\source\repos\project0527\project0527\obj\Debug\project0527.exe
+C:\Users\김성준\source\repos\project0527\project0527\obj\Debug\project0527.pdb
+C:\Users\김성준\source\repos\project0527\project0527\obj\Debug\project0527.Form3.resources
+C:\Users\chldu\Desktop\수정\project0527\bin\Debug\project0527.exe.config
+C:\Users\chldu\Desktop\수정\project0527\bin\Debug\project0527.exe
+C:\Users\chldu\Desktop\수정\project0527\bin\Debug\project0527.pdb
+C:\Users\chldu\Desktop\수정\project0527\obj\Debug\project0527.csprojAssemblyReference.cache
+C:\Users\chldu\Desktop\수정\project0527\obj\Debug\project0527.Form1.resources
+C:\Users\chldu\Desktop\수정\project0527\obj\Debug\project0527.Form2.resources
+C:\Users\chldu\Desktop\수정\project0527\obj\Debug\project0527.Form3.resources
+C:\Users\chldu\Desktop\수정\project0527\obj\Debug\project0527.Properties.Resources.resources
+C:\Users\chldu\Desktop\수정\project0527\obj\Debug\project0527.csproj.GenerateResource.cache
+C:\Users\chldu\Desktop\수정\project0527\obj\Debug\project0527.csproj.CoreCompileInputs.cache
+C:\Users\chldu\Desktop\수정\project0527\obj\Debug\project0527.exe
+C:\Users\chldu\Desktop\수정\project0527\obj\Debug\project0527.pdb
+C:\Users\chldu\Desktop\수정\project0527\bin\Debug\PacketLibrary.dll
+C:\Users\chldu\Desktop\수정\project0527\bin\Debug\PacketLibrary.pdb
+C:\Users\chldu\Desktop\수정\project0527\obj\Debug\project0527.csproj.CopyComplete
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\bin\Debug\project0527.exe.config
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\bin\Debug\project0527.exe
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\bin\Debug\project0527.pdb
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\bin\Debug\PacketLibrary.dll
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\bin\Debug\PacketLibrary.pdb
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\obj\Debug\project0527.csprojAssemblyReference.cache
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\obj\Debug\project0527.Form1.resources
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\obj\Debug\project0527.Form2.resources
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\obj\Debug\project0527.Form3.resources
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\obj\Debug\project0527.Properties.Resources.resources
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\obj\Debug\project0527.csproj.GenerateResource.cache
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\obj\Debug\project0527.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\obj\Debug\project0527.csproj.CopyComplete
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\obj\Debug\project0527.exe
+C:\Users\Owner\Desktop\Desktop (1)\수정\project0527\obj\Debug\project0527.pdb
+C:\Users\chldu\Desktop\0531\수정\project0527\bin\Debug\project0527.exe.config
+C:\Users\chldu\Desktop\0531\수정\project0527\bin\Debug\project0527.exe
+C:\Users\chldu\Desktop\0531\수정\project0527\bin\Debug\project0527.pdb
+C:\Users\chldu\Desktop\0531\수정\project0527\bin\Debug\PacketLibrary.dll
+C:\Users\chldu\Desktop\0531\수정\project0527\bin\Debug\PacketLibrary.pdb
+C:\Users\chldu\Desktop\0531\수정\project0527\obj\Debug\project0527.csprojAssemblyReference.cache
+C:\Users\chldu\Desktop\0531\수정\project0527\obj\Debug\project0527.Form1.resources
+C:\Users\chldu\Desktop\0531\수정\project0527\obj\Debug\project0527.Form2.resources
+C:\Users\chldu\Desktop\0531\수정\project0527\obj\Debug\project0527.Form3.resources
+C:\Users\chldu\Desktop\0531\수정\project0527\obj\Debug\project0527.Properties.Resources.resources
+C:\Users\chldu\Desktop\0531\수정\project0527\obj\Debug\project0527.csproj.GenerateResource.cache
+C:\Users\chldu\Desktop\0531\수정\project0527\obj\Debug\project0527.csproj.CoreCompileInputs.cache
+C:\Users\chldu\Desktop\0531\수정\project0527\obj\Debug\project0527.csproj.CopyComplete
+C:\Users\chldu\Desktop\0531\수정\project0527\obj\Debug\project0527.exe
+C:\Users\chldu\Desktop\0531\수정\project0527\obj\Debug\project0527.pdb
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\bin\Debug\project0527.exe.config
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\bin\Debug\project0527.exe
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\bin\Debug\project0527.pdb
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\bin\Debug\PacketLibrary.dll
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\bin\Debug\PacketLibrary.pdb
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\obj\Debug\project0527.csprojAssemblyReference.cache
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\obj\Debug\project0527.Form1.resources
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\obj\Debug\project0527.Form2.resources
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\obj\Debug\project0527.Form3.resources
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\obj\Debug\project0527.Properties.Resources.resources
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\obj\Debug\project0527.csproj.GenerateResource.cache
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\obj\Debug\project0527.csproj.CoreCompileInputs.cache
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\obj\Debug\project0527.csproj.CopyComplete
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\obj\Debug\project0527.exe
+C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\project0527\obj\Debug\project0527.pdb

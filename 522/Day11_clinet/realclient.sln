@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UDP_clinet_1", "UDP_clinet_1\UDP_clinet_1.csproj", "{2BD71571-3201-48EA-8ABD-B9D2DAB508E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UDP_client_2", "UDP_client_2\UDP_client_2.csproj", "{05DBB61D-400B-434C-B965-14928E627A5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UDP_Client_3", "UDP_Client_3\UDP_Client_3.csproj", "{5A7C21BB-C439-458B-86F7-FA24ED030736}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UDP_Client_4", "UDP_Client_4\UDP_Client_4.csproj", "{07AE188B-7921-4B52-91AB-6AA0C4D87112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDP_UISClient", "UDP_UISClient\UDP_UISClient.csproj", "{68D428A8-DED8-4C12-90C2-7F99E69EF8FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDP_UIClient_2", "UDP_UIClient_2\UDP_UIClient_2.csproj", "{29C350AC-4E0C-4AC2-B8D9-BA73B3B4C8E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "realtcpclient", "PCT_UIClient_1\realtcpclient.csproj", "{6E046572-6372-46F7-AEE6-2CA7C8CF963E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BD71571-3201-48EA-8ABD-B9D2DAB508E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD71571-3201-48EA-8ABD-B9D2DAB508E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD71571-3201-48EA-8ABD-B9D2DAB508E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD71571-3201-48EA-8ABD-B9D2DAB508E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05DBB61D-400B-434C-B965-14928E627A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05DBB61D-400B-434C-B965-14928E627A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05DBB61D-400B-434C-B965-14928E627A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05DBB61D-400B-434C-B965-14928E627A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A7C21BB-C439-458B-86F7-FA24ED030736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A7C21BB-C439-458B-86F7-FA24ED030736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A7C21BB-C439-458B-86F7-FA24ED030736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A7C21BB-C439-458B-86F7-FA24ED030736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07AE188B-7921-4B52-91AB-6AA0C4D87112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07AE188B-7921-4B52-91AB-6AA0C4D87112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07AE188B-7921-4B52-91AB-6AA0C4D87112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07AE188B-7921-4B52-91AB-6AA0C4D87112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68D428A8-DED8-4C12-90C2-7F99E69EF8FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D428A8-DED8-4C12-90C2-7F99E69EF8FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D428A8-DED8-4C12-90C2-7F99E69EF8FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D428A8-DED8-4C12-90C2-7F99E69EF8FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C350AC-4E0C-4AC2-B8D9-BA73B3B4C8E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C350AC-4E0C-4AC2-B8D9-BA73B3B4C8E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C350AC-4E0C-4AC2-B8D9-BA73B3B4C8E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C350AC-4E0C-4AC2-B8D9-BA73B3B4C8E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E046572-6372-46F7-AEE6-2CA7C8CF963E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E046572-6372-46F7-AEE6-2CA7C8CF963E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E046572-6372-46F7-AEE6-2CA7C8CF963E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E046572-6372-46F7-AEE6-2CA7C8CF963E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9111BD82-99D0-4163-B3F1-A50B54C0A808}
+	EndGlobalSection
+EndGlobal
