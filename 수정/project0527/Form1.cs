@@ -158,6 +158,30 @@ namespace project0527
 
                                     break;
                                 }
+                            case PacketType.LOGOUT_RESPONSE:
+                                {
+                                    LogoutResponsePacket lgResPacket = (LogoutResponsePacket)Packet.DeSerialize(buffer);
+
+                                    if (lgResPacket.isOK && lgResPacket.users != null)
+                                    {
+                                        string logoutUserNickname = this.users[lgResPacket.logoutUserId];
+                                        this.users = lgResPacket.users;
+
+                                        this.Invoke(new MethodInvoker(() =>
+                                        {
+                                            tb39840.Clear();
+                                            foreach (KeyValuePair<string, string> user in this.users)
+                                            {
+                                                tb39840.AppendText($"{user.Key} : {user.Value}{Environment.NewLine}");
+                                            }
+                                            textBox1.SelectionColor = Color.Black;
+                                            textBox1.SelectionAlignment = HorizontalAlignment.Center;
+                                            textBox1.AppendText($"{logoutUserNickname}님이 채팅방을 나갔습니다.{Environment.NewLine}");
+                                        }));
+                                    }
+
+                                    break;
+                                }
                             case PacketType.TEXT_CHAT_RESPONSE:
                                 {
                                     //text chat response packet received
@@ -422,7 +446,25 @@ namespace project0527
 
         private void tb39840_TextChanged(object sender, EventArgs e)
         {
+        }
 
+        async private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //클라이언트가  채팅방을 나갈때
+
+            if (this.userId != string.Empty)
+            {
+                LogoutPacket lgPacket = new LogoutPacket();
+                lgPacket.userId = this.userId;
+
+                this.sendBuffer = Packet.Serialize(lgPacket).ToList();
+                await this.Send().ConfigureAwait(false);
+
+                this.stream.Close();
+                this.client.Close();
+                this.thread.Abort();
+                this.Close();
+            }
         }
     }
 }

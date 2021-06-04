@@ -86,6 +86,18 @@ namespace TCP_UIServer_1
             }
         }
 
+        async public Task BroadcastLogoutResponsePacket(LogoutResponsePacket lgResPacket)
+        {
+            foreach (KeyValuePair<string, TcpClient> client in this.clients)
+            {
+                NetworkStream stream = client.Value.GetStream();
+
+                byte[] buffer = Packet.Serialize(lgResPacket);
+
+                await stream.WriteAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
+            }
+        }
+
         async public void AsyncTcpProcess(object o)
         {
             TcpClient client = (TcpClient)o;
@@ -114,6 +126,11 @@ namespace TCP_UIServer_1
                                 {
                                     this.users.Add(loginPacket.userId, loginPacket.nickName);
                                     this.clients.Add(loginPacket.userId, client);
+
+                                    this.Invoke(new MethodInvoker(() =>
+                                    {
+                                        this.tbBoard.AppendText($"{loginPacket.nickName}님이 입장하셨습니다.{Environment.NewLine}");
+                                    }));
                                 }
 
                                 //send loginResponse packet to all
@@ -123,6 +140,43 @@ namespace TCP_UIServer_1
 
                                 await BroadcastLoginResponse(lPacket).ConfigureAwait(false);
 
+                                break;
+                            }
+                        case PacketType.LOGOUT:
+                            {
+                                LogoutPacket lgPacket = (LogoutPacket)Packet.DeSerialize(buffer);
+                                if (lgPacket.userId != string.Empty)
+                                {
+                                    string userId = lgPacket.userId;
+
+                                    if (this.users.ContainsKey(userId))
+                                    {
+                                        this.Invoke(new MethodInvoker(() =>
+                                        {
+                                            //update server board
+                                            tbBoard.AppendText($"{this.users[userId]}님이 채팅방에서 나갔습니다.{Environment.NewLine}");
+                                        }));
+
+                                        this.users.Remove(userId);
+
+                                        if (this.clients.ContainsKey(userId))
+                                        {
+                                            //remove target tcpClient
+                                            TcpClient logoutUser = this.clients[userId];
+                                            logoutUser.GetStream().Close();
+                                            logoutUser.Close();
+
+                                            this.clients.Remove(userId);
+
+                                            LogoutResponsePacket lgResPacket = new LogoutResponsePacket();
+                                            lgResPacket.users = this.users;
+                                            lgResPacket.isOK = true;
+                                            lgResPacket.logoutUserId = userId;
+
+                                            await BroadcastLogoutResponsePacket(lgResPacket).ConfigureAwait(false);
+                                        }
+                                    }
+                                }
                                 break;
                             }
                         case PacketType.TEXT_CHAT:

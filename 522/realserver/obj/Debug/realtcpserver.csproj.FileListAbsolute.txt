@@ -67,3 +67,16 @@ C:\Users\chldu\Desktop\응소실찬서님업데이트\522\realserver\obj\Debug\r
 C:\Users\chldu\Desktop\응소실찬서님업데이트\522\realserver\obj\Debug\realtcpserver.csproj.CopyComplete
 C:\Users\chldu\Desktop\응소실찬서님업데이트\522\realserver\obj\Debug\TCP_UIServer_1.exe
 C:\Users\chldu\Desktop\응소실찬서님업데이트\522\realserver\obj\Debug\TCP_UIServer_1.pdb
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\bin\Debug\TCP_UIServer_1.exe.config
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\bin\Debug\TCP_UIServer_1.exe
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\bin\Debug\TCP_UIServer_1.pdb
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\bin\Debug\PacketLibrary.dll
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\bin\Debug\PacketLibrary.pdb
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\obj\Debug\realtcpserver.csprojAssemblyReference.cache
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\obj\Debug\TCP_UIServer_1.Form1.resources
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\obj\Debug\TCP_UIServer_1.Properties.Resources.resources
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\obj\Debug\realtcpserver.csproj.GenerateResource.cache
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\obj\Debug\realtcpserver.csproj.CoreCompileInputs.cache
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\obj\Debug\realtcpserver.csproj.CopyComplete
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\obj\Debug\TCP_UIServer_1.exe
+C:\Users\chldu\Desktop\kwangtalk\522\realserver\obj\Debug\TCP_UIServer_1.pdb

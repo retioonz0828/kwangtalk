@@ -19,7 +19,9 @@ namespace PacketLibrary
             FILE,
             FILE_RESPONSE,
             TEXT_CHAT,
-            TEXT_CHAT_RESPONSE
+            TEXT_CHAT_RESPONSE,
+            LOGOUT,
+            LOGOUT_RESPONSE,
         }
 
         [Serializable]
@@ -156,6 +158,34 @@ namespace PacketLibrary
                 this.sendUserNickName = string.Empty;
                 this.fileName = string.Empty;
                 this.fileFormat = string.Empty;
+            }
+        }
+
+        [Serializable]
+        public class LogoutPacket : Packet
+        {
+            public string userId;
+
+            public LogoutPacket()
+            {
+                this.userId = string.Empty;
+                this.type = PacketType.LOGOUT;
+            }
+        }
+
+        [Serializable]
+        public class LogoutResponsePacket : Packet
+        {
+            public bool isOK;
+            public Dictionary<string, string> users;
+            public string logoutUserId;
+
+            public LogoutResponsePacket()
+            {
+                this.isOK = false;
+                this.logoutUserId = string.Empty;
+                this.type = PacketType.LOGOUT_RESPONSE;
+                this.users = new Dictionary<string, string>();
             }
         }
     }

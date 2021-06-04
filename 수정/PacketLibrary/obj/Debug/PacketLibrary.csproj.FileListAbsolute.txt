@@ -10,3 +10,9 @@ C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\PacketLibrary\obj\D
 C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\PacketLibrary\obj\Debug\PacketLibrary.csproj.CoreCompileInputs.cache
 C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\PacketLibrary\obj\Debug\PacketLibrary.dll
 C:\Users\chldu\Desktop\응소실찬서님업데이트\수정\PacketLibrary\obj\Debug\PacketLibrary.pdb
+C:\Users\chldu\Desktop\kwangtalk\수정\PacketLibrary\bin\Debug\PacketLibrary.dll
+C:\Users\chldu\Desktop\kwangtalk\수정\PacketLibrary\bin\Debug\PacketLibrary.pdb
+C:\Users\chldu\Desktop\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.csprojAssemblyReference.cache
+C:\Users\chldu\Desktop\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.csproj.CoreCompileInputs.cache
+C:\Users\chldu\Desktop\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.dll
+C:\Users\chldu\Desktop\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.pdb
