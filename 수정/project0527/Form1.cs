@@ -419,5 +419,10 @@ namespace project0527
                 textBox2.Text = string.Empty;
             }));
         }
+
+        private void tb39840_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
