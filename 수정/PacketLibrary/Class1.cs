@@ -165,11 +165,13 @@ namespace PacketLibrary
         public class LogoutPacket : Packet
         {
             public string userId;
+            public bool wrongOut;
 
             public LogoutPacket()
             {
                 this.userId = string.Empty;
                 this.type = PacketType.LOGOUT;
+                this.wrongOut = false;
             }
         }
 
@@ -179,6 +181,7 @@ namespace PacketLibrary
             public bool isOK;
             public Dictionary<string, string> users;
             public string logoutUserId;
+            public bool wrongOut;
 
             public LogoutResponsePacket()
             {
@@ -186,6 +189,7 @@ namespace PacketLibrary
                 this.logoutUserId = string.Empty;
                 this.type = PacketType.LOGOUT_RESPONSE;
                 this.users = new Dictionary<string, string>();
+                this.wrongOut = false;
             }
         }
     }

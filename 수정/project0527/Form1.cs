@@ -41,6 +41,8 @@ namespace project0527
 
         private Dictionary<string, string> users;
 
+        bool is_same;
+
         public Form1()
         {
             InitializeComponent();
@@ -156,6 +158,42 @@ namespace project0527
                                         }));
                                     }
 
+                                    is_same = false;
+                                    foreach (KeyValuePair<string, string> user in this.users)
+                                    {
+                                        if (user.Value.Equals(this.myNickName))
+                                        {
+                                            if (user.Key.Equals(this.userId))
+                                            {
+                                                if (is_same)
+                                                {
+                                                    if (this.userId != string.Empty)
+                                                    {
+                                                        MessageBox.Show("중복된 닉네임이 있습니다.");
+                                                        LogoutPacket lgPacket = new LogoutPacket();
+                                                        lgPacket.userId = this.userId;
+                                                        lgPacket.wrongOut = true;
+
+                                                        this.sendBuffer = Packet.Serialize(lgPacket).ToList();
+                                                        await this.Send().ConfigureAwait(false);
+
+                                                        this.stream.Close();
+                                                        this.client.Close();
+                                                        this.thread.Abort();
+                                                        this.Close();
+                                                    }
+                                                }
+                                                else
+                                                    break;
+                                            }
+                                            else
+                                            {
+                                                is_same = true;
+                                            }
+                                        }
+                                    }
+
+
                                     break;
                                 }
                             case PacketType.LOGOUT_RESPONSE:
@@ -176,7 +214,8 @@ namespace project0527
                                             }
                                             textBox1.SelectionColor = Color.Black;
                                             textBox1.SelectionAlignment = HorizontalAlignment.Center;
-                                            textBox1.AppendText($"{logoutUserNickname}님이 채팅방을 나갔습니다.{Environment.NewLine}");
+                                            if(!lgResPacket.wrongOut)
+                                                textBox1.AppendText($"{logoutUserNickname}님이 채팅방을 나갔습니다.{Environment.NewLine}");
                                         }));
                                     }
 
@@ -394,7 +433,7 @@ namespace project0527
             {
                 string filePath = openFileDialog1.FileName;
 
-                if (File.Exists(filePath))
+                if (System.IO.File.Exists(filePath))
                 {
                     //check file size
                     if (new FileInfo(filePath).Length >= BUFFER_SIZE)
@@ -407,7 +446,7 @@ namespace project0527
                     string format = strs[strs.Length - 1];
 
                     FilePacket fPacket = new FilePacket();
-                    FileStream fStream = File.OpenRead(filePath);
+                    FileStream fStream = System.IO.File.OpenRead(filePath);
 
                     fPacket.fileName = filePath;
                     fPacket.sendUserId = this.userId;
@@ -464,6 +503,27 @@ namespace project0527
                 this.client.Close();
                 this.thread.Abort();
                 this.Close();
+            }
+        }
+
+        async private void 메뉴1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 f4 = new Form4();
+            f4.items = new string[users.Count];
+            int num = 0;
+            foreach (KeyValuePair<string, string> user in this.users)
+            {
+                f4.items[num] = user.Value;
+                num++;
+            }
+            DialogResult dr = f4.ShowDialog();
+            if(dr == DialogResult.OK)
+            {
+                string textBody = "[뽑기] " + f4.answer + "님이 당첨되셨습니다!";
+
+                this.textChatPacket = new TextChatPacket(this.userId, textBody);
+                this.sendBuffer = Packet.Serialize(this.textChatPacket).ToList();
+                await this.Send().ConfigureAwait(false);
             }
         }
     }

@@ -41,11 +41,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.메뉴1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.목록1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.목록2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.메뉴2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.목록3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.목록4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
@@ -71,27 +66,28 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(838, 464);
+            this.panel1.Size = new System.Drawing.Size(958, 580);
             this.panel1.TabIndex = 1;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(255, 39);
+            this.textBox1.Location = new System.Drawing.Point(291, 49);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(574, 378);
+            this.textBox1.Size = new System.Drawing.Size(655, 472);
             this.textBox1.TabIndex = 7;
             this.textBox1.Text = "";
             // 
             // tb39840
             // 
-            this.tb39840.Location = new System.Drawing.Point(10, 293);
+            this.tb39840.Location = new System.Drawing.Point(11, 366);
+            this.tb39840.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb39840.Multiline = true;
             this.tb39840.Name = "tb39840";
             this.tb39840.ReadOnly = true;
-            this.tb39840.Size = new System.Drawing.Size(211, 98);
+            this.tb39840.Size = new System.Drawing.Size(241, 122);
             this.tb39840.TabIndex = 20;
             this.tb39840.TextChanged += new System.EventHandler(this.tb39840_TextChanged);
             // 
@@ -100,9 +96,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.BurlyWood;
             this.label3.Font = new System.Drawing.Font("Consolas", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 31);
+            this.label3.Location = new System.Drawing.Point(9, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(208, 41);
+            this.label3.Size = new System.Drawing.Size(262, 51);
             this.label3.TabIndex = 19;
             this.label3.Text = "KWANG-TALK";
             // 
@@ -110,9 +106,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.BurlyWood;
-            this.label2.Location = new System.Drawing.Point(10, 278);
+            this.label2.Location = new System.Drawing.Point(11, 348);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 17;
             this.label2.Text = "참여자";
             // 
@@ -121,9 +117,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.BurlyWood;
             this.label1.Font = new System.Drawing.Font("휴먼둥근헤드라인", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(16, 85);
+            this.label1.Location = new System.Drawing.Point(18, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 25);
+            this.label1.Size = new System.Drawing.Size(235, 32);
             this.label1.TabIndex = 15;
             this.label1.Text = "     님의 채팅";
             // 
@@ -131,10 +127,10 @@
             // 
             this.pictureBox1.Image = global::project0527.Properties.Resources.symbol;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 394);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 492);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(241, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -142,98 +138,63 @@
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.Color.BurlyWood;
-            this.splitter1.Location = new System.Drawing.Point(0, 24);
+            this.splitter1.Location = new System.Drawing.Point(0, 28);
             this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(240, 440);
+            this.splitter1.Size = new System.Drawing.Size(274, 552);
             this.splitter1.TabIndex = 13;
             this.splitter1.TabStop = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(748, 421);
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button2.Location = new System.Drawing.Point(855, 526);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 34);
+            this.button2.Size = new System.Drawing.Size(91, 42);
             this.button2.TabIndex = 12;
             this.button2.Text = "파일\r\n전송";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(663, 421);
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.Location = new System.Drawing.Point(758, 526);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 34);
+            this.button1.Size = new System.Drawing.Size(91, 42);
             this.button1.TabIndex = 9;
             this.button1.Text = "메시지\r\n전송";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(255, 421);
+            this.textBox2.Location = new System.Drawing.Point(291, 526);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(404, 34);
+            this.textBox2.Size = new System.Drawing.Size(461, 42);
             this.textBox2.TabIndex = 8;
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.메뉴1ToolStripMenuItem,
-            this.메뉴2ToolStripMenuItem});
+            this.메뉴1ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(838, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(958, 28);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 메뉴1ToolStripMenuItem
             // 
-            this.메뉴1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.목록1ToolStripMenuItem,
-            this.목록2ToolStripMenuItem});
             this.메뉴1ToolStripMenuItem.Name = "메뉴1ToolStripMenuItem";
-            this.메뉴1ToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.메뉴1ToolStripMenuItem.Text = "메뉴1";
-            // 
-            // 목록1ToolStripMenuItem
-            // 
-            this.목록1ToolStripMenuItem.Name = "목록1ToolStripMenuItem";
-            this.목록1ToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.목록1ToolStripMenuItem.Text = "목록1";
-            // 
-            // 목록2ToolStripMenuItem
-            // 
-            this.목록2ToolStripMenuItem.Name = "목록2ToolStripMenuItem";
-            this.목록2ToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.목록2ToolStripMenuItem.Text = "목록2";
-            // 
-            // 메뉴2ToolStripMenuItem
-            // 
-            this.메뉴2ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.목록3ToolStripMenuItem,
-            this.목록4ToolStripMenuItem});
-            this.메뉴2ToolStripMenuItem.Name = "메뉴2ToolStripMenuItem";
-            this.메뉴2ToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.메뉴2ToolStripMenuItem.Text = "메뉴2";
-            // 
-            // 목록3ToolStripMenuItem
-            // 
-            this.목록3ToolStripMenuItem.Name = "목록3ToolStripMenuItem";
-            this.목록3ToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.목록3ToolStripMenuItem.Text = "목록3";
-            // 
-            // 목록4ToolStripMenuItem
-            // 
-            this.목록4ToolStripMenuItem.Name = "목록4ToolStripMenuItem";
-            this.목록4ToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.목록4ToolStripMenuItem.Text = "목록4";
+            this.메뉴1ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.메뉴1ToolStripMenuItem.Text = "뽑기";
+            this.메뉴1ToolStripMenuItem.Click += new System.EventHandler(this.메뉴1ToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -241,10 +202,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(838, 464);
+            this.ClientSize = new System.Drawing.Size(958, 580);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -275,11 +236,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem 메뉴1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 목록1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 목록2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 메뉴2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 목록3ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 목록4ToolStripMenuItem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb39840;
         private System.Windows.Forms.RichTextBox textBox1;

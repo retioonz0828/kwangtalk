@@ -169,6 +169,7 @@ namespace TCP_UIServer_1
                                             this.clients.Remove(userId);
 
                                             LogoutResponsePacket lgResPacket = new LogoutResponsePacket();
+                                            lgResPacket.wrongOut = lgPacket.wrongOut;
                                             lgResPacket.users = this.users;
                                             lgResPacket.isOK = true;
                                             lgResPacket.logoutUserId = userId;
