@@ -243,6 +243,7 @@ namespace project0527
 
                                     if (tPacket.textBody != string.Empty && tPacket.isOk)
                                     {
+                                        //id문자열을 숫자로 변환, 15로 나눈 나머지값으로 색 부여
                                         string sendUser = this.users[tPacket.userId];
                                         int colorNum = 0;
                                         for (int i = 0; i < sendUser.Length; i++)
@@ -252,7 +253,7 @@ namespace project0527
 
                                         this.Invoke(new MethodInvoker(() =>
                                         {
-                                            switch (colorNum % 21)
+                                            switch (colorNum % 15)
                                             {
                                                 case 1:
                                                     textBox1.SelectionColor = Color.Red;
@@ -271,66 +272,42 @@ namespace project0527
                                                     break;
 
                                                 case 5:
-                                                    textBox1.SelectionColor = Color.Yellow;
-                                                    break;
-
-                                                case 6:
                                                     textBox1.SelectionColor = Color.Green;
                                                     break;
 
-                                                case 7:
-                                                    textBox1.SelectionColor = Color.Ivory;
-                                                    break;
-
-                                                case 8:
+                                                case 6:
                                                     textBox1.SelectionColor = Color.Pink;
                                                     break;
 
-                                                case 9:
-                                                    textBox1.SelectionColor = Color.Gray;
-                                                    break;
-
-                                                case 10:
+                                                case 7:
                                                     textBox1.SelectionColor = Color.Gold;
                                                     break;
 
-                                                case 11:
+                                                case 8:
                                                     textBox1.SelectionColor = Color.CadetBlue;
                                                     break;
 
-                                                case 12:
+                                                case 9:
                                                     textBox1.SelectionColor = Color.MediumVioletRed;
                                                     break;
 
-                                                case 13:
-                                                    textBox1.SelectionColor = Color.BurlyWood;
-                                                    break;
-
-                                                case 14:
-                                                    textBox1.SelectionColor = Color.Lime;
-                                                    break;
-
-                                                case 15:
+                                                case 10:
                                                     textBox1.SelectionColor = Color.Aqua;
                                                     break;
 
-                                                case 16:
+                                                case 11:
                                                     textBox1.SelectionColor = Color.Violet;
                                                     break;
 
-                                                case 17:
-                                                    textBox1.SelectionColor = Color.LightCoral;
-                                                    break;
-
-                                                case 18:
+                                                case 12:
                                                     textBox1.SelectionColor = Color.Tan;
                                                     break;
 
-                                                case 19:
+                                                case 13:
                                                     textBox1.SelectionColor = Color.Khaki;
                                                     break;
 
-                                                case 20:
+                                                case 14:
                                                     textBox1.SelectionColor = Color.MediumAquamarine;
                                                     break;
 
@@ -338,6 +315,7 @@ namespace project0527
                                                     textBox1.SelectionColor = Color.Brown;
                                                     break;
                                             }
+                                            //상대방이 보낸 메세지는 왼쪽으로, 내가 보낸 메세지는 오른쪽으로 출력
                                             if (sendUser == this.myNickName)
                                             {
                                                 textBox1.SelectionAlignment = HorizontalAlignment.Right;
