@@ -33,7 +33,7 @@ namespace project0527
 
         private void button3_Click(object sender, EventArgs e)
         {
-            label2.Text = "";
+            label2.Text = ""; //유저 리스트의 유저 이름을 받아 난수 생성 후 인덱스 값으로 이용해서 무작위 유저 이름을 반환
             DateTime dt = DateTime.Now;
             Random rand = new Random(dt.Millisecond);
             int num = rand.Next(1, items.Length);

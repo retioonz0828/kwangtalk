@@ -171,7 +171,7 @@ namespace project0527
                                     is_same = false;
                                     foreach (KeyValuePair<string, string> user in this.users)
                                     {
-                                        if (user.Value.Equals(this.myNickName))
+                                        if (user.Value.Equals(this.myNickName)) //유저 리스트를 검사하여 먼저 들어온 사람 중 닉네임이 자신과 같으면서 ID가 다른 유저가 있다면 메시지 박스를 띄우고 로그아웃 패킷을 보내고 프로그램 종료
                                         {
                                             if (user.Key.Equals(this.userId))
                                             {
@@ -225,7 +225,7 @@ namespace project0527
                                             }
                                             textBox1.SelectionColor = Color.Black;
                                             textBox1.SelectionAlignment = HorizontalAlignment.Center;
-                                            if (!lgResPacket.wrongOut)
+                                            if (!lgResPacket.wrongOut) //ID가 중복되어 나가게 된 경우에는 이 메시지를 띄우지 않도록 함
                                                 textBox1.AppendText($"{logoutUserNickname}님이 채팅방을 나갔습니다.{Environment.NewLine}");
                                         }));
                                     }
