@@ -40,6 +40,8 @@ namespace project0527
 
         private Dictionary<string, string> users;
 
+        private bool is_same;
+
         public Form1()
         {
             InitializeComponent();
@@ -166,6 +168,41 @@ namespace project0527
                                         }));
                                     }
 
+                                    is_same = false;
+                                    foreach (KeyValuePair<string, string> user in this.users)
+                                    {
+                                        if (user.Value.Equals(this.myNickName))
+                                        {
+                                            if (user.Key.Equals(this.userId))
+                                            {
+                                                if (is_same)
+                                                {
+                                                    if (this.userId != string.Empty)
+                                                    {
+                                                        MessageBox.Show("중복된 닉네임이 있습니다.");
+                                                        LogoutPacket lgPacket = new LogoutPacket();
+                                                        lgPacket.userId = this.userId;
+                                                        lgPacket.wrongOut = true;
+
+                                                        this.sendBuffer = Packet.Serialize(lgPacket).ToList();
+                                                        await this.Send().ConfigureAwait(false);
+
+                                                        this.stream.Close();
+                                                        this.client.Close();
+                                                        this.thread.Abort();
+                                                        this.Close();
+                                                    }
+                                                }
+                                                else
+                                                    break;
+                                            }
+                                            else
+                                            {
+                                                is_same = true;
+                                            }
+                                        }
+                                    }
+
                                     break;
                                 }
                             case PacketType.LOGOUT_RESPONSE:
@@ -188,7 +225,8 @@ namespace project0527
                                             }
                                             textBox1.SelectionColor = Color.Black;
                                             textBox1.SelectionAlignment = HorizontalAlignment.Center;
-                                            textBox1.AppendText($"{logoutUserNickname}님이 채팅방을 나갔습니다.{Environment.NewLine}");
+                                            if (!lgResPacket.wrongOut)
+                                                textBox1.AppendText($"{logoutUserNickname}님이 채팅방을 나갔습니다.{Environment.NewLine}");
                                         }));
                                     }
 
@@ -217,6 +255,7 @@ namespace project0527
                                     if (tPacket.textBody != string.Empty && tPacket.isOk)
                                     {
                                         //패킷 데이터에 문제가 없으면 윈폼에 해당 데이터 업데이트
+                                        //id문자열을 숫자로 변환, 15로 나눈 나머지값으로 색 부여
                                         string sendUser = this.users[tPacket.userId];
                                         int colorNum = 0;
                                         for (int i = 0; i < sendUser.Length; i++)
@@ -226,7 +265,7 @@ namespace project0527
 
                                         this.Invoke(new MethodInvoker(() =>
                                         {
-                                            switch (colorNum % 21)
+                                            switch (colorNum % 15)
                                             {
                                                 case 1:
                                                     textBox1.SelectionColor = Color.Red;
@@ -245,66 +284,42 @@ namespace project0527
                                                     break;
 
                                                 case 5:
-                                                    textBox1.SelectionColor = Color.Yellow;
-                                                    break;
-
-                                                case 6:
                                                     textBox1.SelectionColor = Color.Green;
                                                     break;
 
-                                                case 7:
-                                                    textBox1.SelectionColor = Color.Ivory;
-                                                    break;
-
-                                                case 8:
+                                                case 6:
                                                     textBox1.SelectionColor = Color.Pink;
                                                     break;
 
-                                                case 9:
-                                                    textBox1.SelectionColor = Color.Gray;
-                                                    break;
-
-                                                case 10:
+                                                case 7:
                                                     textBox1.SelectionColor = Color.Gold;
                                                     break;
 
-                                                case 11:
+                                                case 8:
                                                     textBox1.SelectionColor = Color.CadetBlue;
                                                     break;
 
-                                                case 12:
+                                                case 9:
                                                     textBox1.SelectionColor = Color.MediumVioletRed;
                                                     break;
 
-                                                case 13:
-                                                    textBox1.SelectionColor = Color.BurlyWood;
-                                                    break;
-
-                                                case 14:
-                                                    textBox1.SelectionColor = Color.Lime;
-                                                    break;
-
-                                                case 15:
+                                                case 10:
                                                     textBox1.SelectionColor = Color.Aqua;
                                                     break;
 
-                                                case 16:
+                                                case 11:
                                                     textBox1.SelectionColor = Color.Violet;
                                                     break;
 
-                                                case 17:
-                                                    textBox1.SelectionColor = Color.LightCoral;
-                                                    break;
-
-                                                case 18:
+                                                case 12:
                                                     textBox1.SelectionColor = Color.Tan;
                                                     break;
 
-                                                case 19:
+                                                case 13:
                                                     textBox1.SelectionColor = Color.Khaki;
                                                     break;
 
-                                                case 20:
+                                                case 14:
                                                     textBox1.SelectionColor = Color.MediumAquamarine;
                                                     break;
 
@@ -312,6 +327,7 @@ namespace project0527
                                                     textBox1.SelectionColor = Color.Brown;
                                                     break;
                                             }
+                                            //상대방이 보낸 메세지는 왼쪽으로, 내가 보낸 메세지는 오른쪽으로 출력
                                             if (sendUser == this.myNickName)
                                             {
                                                 textBox1.SelectionAlignment = HorizontalAlignment.Right;
@@ -412,7 +428,7 @@ namespace project0527
             {
                 string filePath = openFileDialog1.FileName;
 
-                if (File.Exists(filePath))
+                if (System.IO.File.Exists(filePath))
                 {
                     //check file size
                     if (new FileInfo(filePath).Length >= BUFFER_SIZE)
@@ -425,7 +441,7 @@ namespace project0527
                     string format = strs[strs.Length - 1];
 
                     FilePacket fPacket = new FilePacket();
-                    FileStream fStream = File.OpenRead(filePath);
+                    FileStream fStream = System.IO.File.OpenRead(filePath);
 
                     fPacket.fileName = filePath;
                     fPacket.sendUserId = this.userId;
@@ -479,6 +495,27 @@ namespace project0527
                 this.client.Close();
                 this.thread.Abort();
                 this.Close();
+            }
+        }
+
+        async private void 메뉴1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 f4 = new Form4();
+            f4.items = new string[users.Count];
+            int num = 0;
+            foreach (KeyValuePair<string, string> user in this.users)
+            {
+                f4.items[num] = user.Value;
+                num++;
+            }
+            DialogResult dr = f4.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                string textBody = "[뽑기] " + f4.answer + "님이 당첨되셨습니다!";
+
+                this.textChatPacket = new TextChatPacket(this.userId, textBody);
+                this.sendBuffer = Packet.Serialize(this.textChatPacket).ToList();
+                await this.Send().ConfigureAwait(false);
             }
         }
     }

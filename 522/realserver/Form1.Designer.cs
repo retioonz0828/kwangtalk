@@ -33,20 +33,22 @@
             // 
             // tbBoard
             // 
-            this.tbBoard.Location = new System.Drawing.Point(12, 12);
+            this.tbBoard.Location = new System.Drawing.Point(14, 15);
+            this.tbBoard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbBoard.Multiline = true;
             this.tbBoard.Name = "tbBoard";
-            this.tbBoard.Size = new System.Drawing.Size(541, 383);
+            this.tbBoard.Size = new System.Drawing.Size(618, 478);
             this.tbBoard.TabIndex = 2;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 450);
+            this.ClientSize = new System.Drawing.Size(771, 562);
             this.Controls.Add(this.tbBoard);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Server";
             this.ResumeLayout(false);
             this.PerformLayout();
 
