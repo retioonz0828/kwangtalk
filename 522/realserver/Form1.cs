@@ -28,6 +28,7 @@ namespace TCP_UIServer_1
 
         async public Task AsyncServer()
         {
+            //서버 초기화 함수. 서버를 시작하고 클라이언트가 들어오길 기다리며, 클라이언트가 들어오면 새로운 Task를 만들어 클라이언트당 Task 하나씩 부여함.
             TcpListener server = new TcpListener(this.PORT);
             server.Start();
 
@@ -41,6 +42,7 @@ namespace TCP_UIServer_1
 
         async public Task BroadcastText(string text, string exceptUserId)
         {
+            //텍스트챗리스폰스 패킷을 접속하고 있는 유저 모두에게 보내는 함수.
             foreach (KeyValuePair<string, TcpClient> client in this.clients)
             {
                 NetworkStream stream = client.Value.GetStream();
@@ -58,6 +60,7 @@ namespace TCP_UIServer_1
 
         async public Task BroadcastLoginResponse(LoginResponsePacket lPacket)
         {
+            //로그인 리스폰스 패킷을 접속한 유저 모두에게 보내는 함수.
             foreach (KeyValuePair<string, TcpClient> client in this.clients)
             {
                 NetworkStream stream = client.Value.GetStream();
@@ -69,6 +72,7 @@ namespace TCP_UIServer_1
 
         async public Task BroadcastFileResponse(FileResponsePacket fRPacket, string exceptUserId)
         {
+            //파일 리스폰스 패킷을 보낸 클라이언트를 제외하고 나머지 모두에게 보내는 함수.
             if (fRPacket != null && exceptUserId != string.Empty)
             {
                 foreach (KeyValuePair<string, TcpClient> client in this.clients)
@@ -88,6 +92,7 @@ namespace TCP_UIServer_1
 
         async public Task BroadcastLogoutResponsePacket(LogoutResponsePacket lgResPacket)
         {
+            //로그아웃 리스폰스 패킷을 보내는 함수.
             foreach (KeyValuePair<string, TcpClient> client in this.clients)
             {
                 NetworkStream stream = client.Value.GetStream();
@@ -100,6 +105,7 @@ namespace TCP_UIServer_1
 
         async public void AsyncTcpProcess(object o)
         {
+            //클라이언트를 받아서 동작하는 함수. 클라이언트가 나가기 전까지 접속을 유지하며 클라이언트가 보낸 패킷을 받아 처리함.
             TcpClient client = (TcpClient)o;
             NetworkStream stream = client.GetStream();
 
@@ -144,6 +150,7 @@ namespace TCP_UIServer_1
                             }
                         case PacketType.LOGOUT:
                             {
+                                //로그아웃 패킷을 받은 경우라면 users를 업데이트 해주고 로그아웃 리스폰스 패킷을 클라이언트들에게 전송
                                 LogoutPacket lgPacket = (LogoutPacket)Packet.DeSerialize(buffer);
                                 if (lgPacket.userId != string.Empty)
                                 {
@@ -191,6 +198,7 @@ namespace TCP_UIServer_1
                             }
                         case PacketType.FILE:
                             {
+                                //파일 패킷을 받은 경우 해당 파일을 파일 리스폰스 패킷으로 포장하여 보낸 클라이언트 말고 다른 클라이언트들에게 전송
                                 FilePacket filePacket = (FilePacket)Packet.DeSerialize(buffer);
                                 if (filePacket.fileBody.Length > 0)
                                 {

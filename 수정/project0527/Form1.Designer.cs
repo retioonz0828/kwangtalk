@@ -93,7 +93,6 @@
             this.tb39840.ReadOnly = true;
             this.tb39840.Size = new System.Drawing.Size(211, 98);
             this.tb39840.TabIndex = 20;
-            this.tb39840.TextChanged += new System.EventHandler(this.tb39840_TextChanged);
             // 
             // label3
             // 

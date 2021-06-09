@@ -26,7 +26,6 @@ namespace project0527
         private TcpClient client;
 
         private List<byte> sendBuffer;
-        private List<byte> readBuffer;
 
         private bool isConnect = false;
 
@@ -48,6 +47,9 @@ namespace project0527
 
         async public Task Send()
         {
+            //패킷 전송 함수
+            //스트림에 sendBuffer 값을 전송함
+
             byte[] buffer = this.sendBuffer.ToArray();
 
             await this.stream.WriteAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
@@ -58,6 +60,8 @@ namespace project0527
 
         async public Task SendLoginPacket()
         {
+            //로그인 패킷을 전송하는 함수
+            //내부적으로 Send 함수를 사용함.
             if (!this.isConnect)
             {
                 return;
@@ -73,6 +77,8 @@ namespace project0527
 
         async public void RUN()
         {
+            //쓰레드에서 동작하는 서버와의 통신 관련 함수. 서버와 연결 되어 있는 동안에는 반복문이 계속 실행 되며 서버로부터 값을 스트림에서 읽어온다.
+
             int nRead = 0;
             byte[] buffer;
 
@@ -87,15 +93,17 @@ namespace project0527
 
                     if (nRead > 0)
                     {
+                        //읽어올 것이 있으면 패킷으로 deserialize 해서 패킷 안에 들어 있는 패킷 타입에 따라 분기하여 각각의 패킷에 알맞은 행동을 하면 됨.
                         Packet packet = (Packet)Packet.DeSerialize(buffer);
 
                         switch (packet.type)
                         {
                             case PacketType.FILE_RESPONSE:
                                 {
-                                    //when client receive file
+                                    //서버로부터 파일을 받은 경우
                                     FileResponsePacket fRPacket = (FileResponsePacket)Packet.DeSerialize(buffer);
 
+                                    //서버로부터 어떤 유저가 접속하고 있는지 업데이트 받아서 클라이언트 윈폼에 업데이트함.
                                     this.users = fRPacket.users;
 
                                     if (this.users.Count > 0 && fRPacket.isOk)
@@ -112,6 +120,7 @@ namespace project0527
 
                                     if (fRPacket.fileFormat != string.Empty && fRPacket.fileBody != null && fRPacket.isOk)
                                     {
+                                        //패킷에 문제가 없으면 파일이 서버로부터 정상적으로 받아진 것으로 해당 파일을 saveFileDialog를 사용하여 사용자가 원하는 위치에 파일을 저장할 수 있게끔 해줌.
                                         this.Invoke(new MethodInvoker(async () =>
                                         {
                                             Form3 mdF3 = new Form3(fRPacket.sendUserNickName, fRPacket.fileName);
@@ -142,6 +151,7 @@ namespace project0527
                                     //로그인 패킷을 받은 경우
                                     this.loginResponsePacket = (LoginResponsePacket)Packet.DeSerialize(buffer);
 
+                                    //서버로부터 받은 유저 데이터를 통한 업데이트
                                     this.users = this.loginResponsePacket.users;
 
                                     if (this.users.Count > 0 && loginResponsePacket.isOk)
@@ -160,10 +170,12 @@ namespace project0527
                                 }
                             case PacketType.LOGOUT_RESPONSE:
                                 {
+                                    //로그아웃 리스폰스 패킷을 받은 경우
                                     LogoutResponsePacket lgResPacket = (LogoutResponsePacket)Packet.DeSerialize(buffer);
 
                                     if (lgResPacket.isOK && lgResPacket.users != null)
                                     {
+                                        //문제가 없으면 서버로 부터 받은 유저 데이터를 이용하여 업데이트해줌
                                         string logoutUserNickname = this.users[lgResPacket.logoutUserId];
                                         this.users = lgResPacket.users;
 
@@ -184,10 +196,10 @@ namespace project0527
                                 }
                             case PacketType.TEXT_CHAT_RESPONSE:
                                 {
-                                    //text chat response packet received
+                                    //텍스트 챗 리스폰스 패킷을 받은 경우
                                     TextChatResponsePacket tPacket = (TextChatResponsePacket)Packet.DeSerialize(buffer);
 
-                                    //user list update
+                                    //서버로부터 받은 유저값 업데이트
                                     this.users = tPacket.users;
 
                                     if (this.users.Count > 0 && tPacket.isOk)
@@ -204,6 +216,7 @@ namespace project0527
 
                                     if (tPacket.textBody != string.Empty && tPacket.isOk)
                                     {
+                                        //패킷 데이터에 문제가 없으면 윈폼에 해당 데이터 업데이트
                                         string sendUser = this.users[tPacket.userId];
                                         int colorNum = 0;
                                         for (int i = 0; i < sendUser.Length; i++)
@@ -330,6 +343,7 @@ namespace project0527
 
         private string generateUniqueID(int _characterLength = 11)
         {
+            //유저 아이디를 랜덤적으로 생성하는 함수
             StringBuilder _builder = new StringBuilder();
             Enumerable
                 .Range(65, 26)
@@ -344,6 +358,8 @@ namespace project0527
 
         async private void Form1_Load(object sender, EventArgs e)
         {
+            //해당 클라이언트 윈폼이 불러지면 동작하는 함수.
+
             Form2 mdF2 = new Form2();
             DialogResult F2Result = mdF2.ShowDialog();
             if (F2Result == DialogResult.OK)
@@ -372,6 +388,7 @@ namespace project0527
 
                 if (this.isConnect)
                 {
+                    //로그인 패킷을 전송하고, 서버로 부터 데이터를 송신받기 위해 쓰레드를 이용하여 대기함.
                     await this.SendLoginPacket().ConfigureAwait(false);
                     this.thread = new Thread(() =>
                      {
@@ -389,6 +406,7 @@ namespace project0527
 
         async private void button2_Click(object sender, EventArgs e)
         {
+            //파일 전송 버튼을 누른 경우.
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -435,6 +453,7 @@ namespace project0527
                 return;
             }
 
+            //텍스트 챗 패킷 전송
             this.textChatPacket = new TextChatPacket(this.userId, textBody);
             this.sendBuffer = Packet.Serialize(this.textChatPacket).ToList();
             await this.Send().ConfigureAwait(false);
@@ -444,13 +463,9 @@ namespace project0527
             }));
         }
 
-        private void tb39840_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         async private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //클라이언트가  채팅방을 나갈때
+            //클라이언트가  채팅방을 나갈때 전부 정리하고 종료
 
             if (this.userId != string.Empty)
             {
