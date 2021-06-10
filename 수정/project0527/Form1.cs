@@ -114,7 +114,7 @@ namespace project0527
                                             tb39840.Clear();
                                             foreach (KeyValuePair<string, string> user in this.users)
                                             {
-                                                tb39840.AppendText($"{user.Key} : {user.Value}{Environment.NewLine}");
+                                                tb39840.AppendText($"{user.Value}{Environment.NewLine}");
                                             }
                                         }));
                                     }
@@ -162,7 +162,7 @@ namespace project0527
                                             tb39840.Clear();
                                             foreach (KeyValuePair<string, string> user in this.users)
                                             {
-                                                tb39840.AppendText($"{user.Key} : {user.Value}{Environment.NewLine}");
+                                                tb39840.AppendText($"{user.Value}{Environment.NewLine}");
                                             }
                                         }));
                                     }
@@ -170,7 +170,7 @@ namespace project0527
                                     is_same = false;
                                     foreach (KeyValuePair<string, string> user in this.users)
                                     {
-                                        if (user.Value.Equals(this.myNickName)) //유저 리스트를 검사하여 먼저 들어온 사람 중 닉네임이 자신과 같으면서 ID가 다른 유저가 있다면 메시지 박스를 띄우고 로그아웃 패킷을 보내고 프로그램 종료
+                                        if (user.Value.Equals(this.myNickName)) //유저 리스트를 검사하여 먼저 들어온 사람 중 닉네임이 자신과 같으면서 ID가 다른 유저가 있다면 메시지 박스를 띄우고 닉네임을 고치도록함
                                         {
                                             if (user.Key.Equals(this.userId))
                                             {
@@ -179,17 +179,29 @@ namespace project0527
                                                     if (this.userId != string.Empty)
                                                     {
                                                         MessageBox.Show("중복된 닉네임이 있습니다.");
-                                                        LogoutPacket lgPacket = new LogoutPacket();
-                                                        lgPacket.userId = this.userId;
-                                                        lgPacket.wrongOut = true;
+
+                                                        this.Invoke(new MethodInvoker(() =>
+                                                        {
+                                                            Form2 mdF2 = new Form2();
+                                                            mdF2.ipTextBox.Text = this.ip;
+                                                            DialogResult F2Result = mdF2.ShowDialog();
+                                                            if (F2Result == DialogResult.OK)
+                                                            {
+                                                                this.myNickName = mdF2.nickNameTextBox.Text;
+                                                                this.label1.Text = $"{this.myNickName}님의 채팅";
+                                                            }
+                                                            else if (F2Result == DialogResult.Cancel)
+                                                            {
+                                                                this.thread.Abort();
+                                                                Application.Exit();
+                                                            }
+                                                        }));
+
+                                                        NewLoginPacket lgPacket = new NewLoginPacket("", this.myNickName, this.userId);
 
                                                         this.sendBuffer = Packet.Serialize(lgPacket).ToList();
                                                         await this.Send().ConfigureAwait(false);
 
-                                                        this.stream.Close();
-                                                        this.client.Close();
-                                                        this.thread.Abort();
-                                                        this.Close();
                                                     }
                                                 }
                                                 else
@@ -220,12 +232,13 @@ namespace project0527
                                             tb39840.Clear();
                                             foreach (KeyValuePair<string, string> user in this.users)
                                             {
-                                                tb39840.AppendText($"{user.Key} : {user.Value}{Environment.NewLine}");
+                                                tb39840.AppendText($"{user.Value}{Environment.NewLine}");
                                             }
                                             textBox1.SelectionColor = Color.Black;
                                             textBox1.SelectionAlignment = HorizontalAlignment.Center;
                                             if (!lgResPacket.wrongOut) //ID가 중복되어 나가게 된 경우에는 이 메시지를 띄우지 않도록 함
                                                 textBox1.AppendText($"{logoutUserNickname}님이 채팅방을 나갔습니다.{Environment.NewLine}");
+                                            textBox1.SelectionAlignment = HorizontalAlignment.Left;
                                         }));
                                     }
 
@@ -246,7 +259,7 @@ namespace project0527
                                             tb39840.Clear();
                                             foreach (KeyValuePair<string, string> user in this.users)
                                             {
-                                                tb39840.AppendText($"{user.Key} : {user.Value}{Environment.NewLine}");
+                                                tb39840.AppendText($"{user.Value}{Environment.NewLine}");
                                             }
                                         }));
                                     }
@@ -307,7 +320,13 @@ namespace project0527
                                                     break;
                                             }
                                             //상대방이 보낸 메세지는 왼쪽으로, 내가 보낸 메세지는 오른쪽으로 출력
-                                            if (sendUser == this.myNickName)
+                                            if(tPacket.textBody[0] == '[' && tPacket.textBody[3] == ']') {
+                                                textBox1.SelectionAlignment = HorizontalAlignment.Center;
+                                                textBox1.SelectionColor = Color.Black;
+                                                textBox1.AppendText($"{tPacket.textBody}{System.Environment.NewLine}");
+                                                textBox1.SelectionAlignment = HorizontalAlignment.Left;
+                                            }
+                                            else if (sendUser == this.myNickName)
                                             {
                                                 textBox1.SelectionAlignment = HorizontalAlignment.Right;
                                                 textBox1.AppendText($"{tPacket.textBody} : 나 [{DateTime.Now.ToShortTimeString()}]{System.Environment.NewLine}");
@@ -495,6 +514,24 @@ namespace project0527
                 this.textChatPacket = new TextChatPacket(this.userId, textBody);
                 this.sendBuffer = Packet.Serialize(this.textChatPacket).ToList();
                 await this.Send().ConfigureAwait(false);
+            }
+        }
+
+        async private void 공지ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form5 f5 = new Form5();
+
+            DialogResult dr = f5.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                if(f5.str != null)
+                {
+                    string textBody = "[공지] " + f5.str;
+
+                    this.textChatPacket = new TextChatPacket(this.userId, textBody);
+                    this.sendBuffer = Packet.Serialize(this.textChatPacket).ToList();
+                    await this.Send().ConfigureAwait(false);
+                }
             }
         }
     }

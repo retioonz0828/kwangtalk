@@ -24,6 +24,7 @@ namespace PacketLibrary
             TEXT_CHAT_RESPONSE,
             LOGOUT,
             LOGOUT_RESPONSE,
+            NEWLOGIN
         }
 
         [Serializable]
@@ -192,6 +193,20 @@ namespace PacketLibrary
                 this.type = PacketType.LOGOUT_RESPONSE;
                 this.users = new Dictionary<string, string>();
                 this.wrongOut = false;
+            }
+        }
+
+        [Serializable]
+        public class NewLoginPacket : Packet
+        {
+            public string nickName;
+            public string userId;
+
+            public NewLoginPacket(string ip, string nickName, string userId)
+            {
+                this.type = PacketType.NEWLOGIN;
+                this.nickName = nickName;
+                this.userId = userId;
             }
         }
     }

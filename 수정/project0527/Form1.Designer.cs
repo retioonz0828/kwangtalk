@@ -43,6 +43,7 @@
             this.메뉴1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.공지ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -181,7 +182,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.메뉴1ToolStripMenuItem});
+            this.메뉴1ToolStripMenuItem,
+            this.공지ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(958, 28);
@@ -198,6 +200,13 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // 공지ToolStripMenuItem
+            // 
+            this.공지ToolStripMenuItem.Name = "공지ToolStripMenuItem";
+            this.공지ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.공지ToolStripMenuItem.Text = "공지";
+            this.공지ToolStripMenuItem.Click += new System.EventHandler(this.공지ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -245,6 +254,7 @@
         private System.Windows.Forms.RichTextBox textBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem 공지ToolStripMenuItem;
     }
 }
 

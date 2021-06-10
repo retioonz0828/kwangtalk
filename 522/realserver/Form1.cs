@@ -216,6 +216,24 @@ namespace TCP_UIServer_1
 
                                 break;
                             }
+                        case PacketType.NEWLOGIN:
+                            {
+                                NewLoginPacket newloginPacket = (NewLoginPacket)Packet.DeSerialize(buffer);
+                                if (newloginPacket.userId != string.Empty && newloginPacket.nickName != string.Empty)
+                                {
+                                    this.users.Remove(newloginPacket.userId);
+                                    this.users.Add(newloginPacket.userId, newloginPacket.nickName);
+
+                                }
+
+                                LoginResponsePacket lPacket = new LoginResponsePacket();
+                                lPacket.isOk = true;
+                                lPacket.users = this.users;
+
+                                await BroadcastLoginResponse(lPacket).ConfigureAwait(false);
+
+                                break;
+                            }
                     }
                 }
                 catch
