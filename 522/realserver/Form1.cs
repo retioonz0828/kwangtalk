@@ -16,7 +16,7 @@ namespace TCP_UIServer_1
     public partial class Form1 : Form
     {
         private readonly int PORT = 18700;
-        private readonly int BUFFER_SIZE = 1024 * 100;
+        private readonly int BUFFER_SIZE = 1024 * 10000;
         private Dictionary<string, string> users = new Dictionary<string, string>();
         private Dictionary<string, TcpClient> clients = new Dictionary<string, TcpClient>();
 

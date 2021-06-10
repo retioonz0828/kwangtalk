@@ -35,7 +35,7 @@ namespace project0527
 
         public Thread thread;
 
-        private readonly int BUFFER_SIZE = 1024 * 100;
+        private readonly int BUFFER_SIZE = 1024 * 10000;
 
         private Dictionary<string, string> users;
 

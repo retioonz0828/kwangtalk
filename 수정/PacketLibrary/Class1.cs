@@ -11,6 +11,8 @@ namespace PacketLibrary
     [Serializable]
     public class Class1
     {
+        public static int BUFFER_SIZE = 1024 * 10000;
+
         public enum PacketType
         {
             INITIAL = 0,
@@ -36,7 +38,7 @@ namespace PacketLibrary
 
             public static byte[] Serialize(object o)
             {
-                MemoryStream ms = new MemoryStream(1024 * 100);
+                MemoryStream ms = new MemoryStream(BUFFER_SIZE);
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(ms, o);
                 return ms.ToArray();
@@ -44,7 +46,7 @@ namespace PacketLibrary
 
             public static Object DeSerialize(byte[] bt)
             {
-                MemoryStream ms = new MemoryStream(1024 * 100);
+                MemoryStream ms = new MemoryStream(BUFFER_SIZE);
 
                 foreach (byte b in bt)
                 {

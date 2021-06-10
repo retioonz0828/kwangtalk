@@ -220,7 +220,6 @@
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
-<<<<<<< HEAD
         }
 
         #endregion
@@ -249,28 +248,3 @@
     }
 }
 
-=======
-        }
-
-        #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem 메뉴1ToolStripMenuItem;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tb39840;
-        private System.Windows.Forms.RichTextBox textBox1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-    }
-}
-
->>>>>>> 1b0b9763eae6270407e65da9c52599b71e9c348c

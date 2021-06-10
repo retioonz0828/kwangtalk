@@ -111,3 +111,4 @@ C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.c
 C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.csproj.CoreCompileInputs.cache
 C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.exe
 C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.pdb
+C:\Users\chldu\Desktop\kwangtalk\수정\project0527\obj\Debug\project0527.Form4.resources
