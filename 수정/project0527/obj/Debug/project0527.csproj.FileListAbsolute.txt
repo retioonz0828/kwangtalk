@@ -101,3 +101,13 @@ C:\Users\김성준\Documents\GitHub\kwangtalk\수정\project0527\obj\Debug\proje
 C:\Users\김성준\Documents\GitHub\kwangtalk\수정\project0527\obj\Debug\project0527.exe
 C:\Users\김성준\Documents\GitHub\kwangtalk\수정\project0527\obj\Debug\project0527.pdb
 C:\Users\김성준\Documents\GitHub\kwangtalk\수정\project0527\obj\Debug\project0527.Form4.resources
+C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.csprojAssemblyReference.cache
+C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.Form1.resources
+C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.Form2.resources
+C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.Form3.resources
+C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.Form4.resources
+C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.Properties.Resources.resources
+C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.csproj.GenerateResource.cache
+C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.exe
+C:\Users\Owner\Source\Repos\kwangtalk\수정\project0527\obj\Debug\project0527.pdb

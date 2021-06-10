@@ -22,3 +22,9 @@ C:\Users\김성준\Documents\GitHub\kwangtalk\수정\PacketLibrary\obj\Debug\Pac
 C:\Users\김성준\Documents\GitHub\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.csproj.CoreCompileInputs.cache
 C:\Users\김성준\Documents\GitHub\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.dll
 C:\Users\김성준\Documents\GitHub\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.pdb
+C:\Users\Owner\Source\Repos\kwangtalk\수정\PacketLibrary\bin\Debug\PacketLibrary.dll
+C:\Users\Owner\Source\Repos\kwangtalk\수정\PacketLibrary\bin\Debug\PacketLibrary.pdb
+C:\Users\Owner\Source\Repos\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.csprojAssemblyReference.cache
+C:\Users\Owner\Source\Repos\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Source\Repos\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.dll
+C:\Users\Owner\Source\Repos\kwangtalk\수정\PacketLibrary\obj\Debug\PacketLibrary.pdb
